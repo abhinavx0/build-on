@@ -69,7 +69,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <AuthProvider>
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <BrowserRouter>
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/*" element={<ProtectedRoutes />} />

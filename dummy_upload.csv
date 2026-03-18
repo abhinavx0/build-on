@@ -1,0 +1,5 @@
+Name,Roll Number,Branch,CGPA,Email,Phone,Batch/Year,Section,Placement Status,Company
+Test Student 1,2021BCSE901,CSE,8.5,test1@iiitranchi.ac.in,9876543210,2025,A,Placed,Google
+Test Student 2,2021BCSE902,ECE,7.8,test2@iiitranchi.ac.in,9876543211,2025,B,Unplaced,
+Test Student 3,2021BCSE903,CSE,9.0,test3@iiitranchi.ac.in,9876543212,2025,A,Offer Pending,Microsoft
+Old Student Update,2021BCSE001,CSE,8.2,aarav.sharma@iiitranchi.ac.in,,2025,A,Placed,Amazon

@@ -1,73 +1,229 @@
-# Welcome to your Lovable project
+# 🚀 PlacementOS — Placement Eligibility Management System
 
-## Project info
+> Automating campus placement workflows with real-time eligibility tracking, shortlist generation, and analytics.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## 📌 About The Project
 
-There are several ways of editing your application.
+PlacementOS is a full-stack web application built to solve inefficiencies in campus placement processes at IIIT Ranchi.
 
-**Use Lovable**
+It replaces manual spreadsheet-based workflows with an automated system that:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+* Tracks student placement status in real-time
+* Filters eligible candidates automatically
+* Generates recruiter-ready shortlists
+* Provides advanced placement analytics
 
-Changes made via Lovable will be committed automatically to this repo.
+📄 Full PRD: 
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## ⚡ Problem
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Traditional placement workflows suffer from:
 
-Follow these steps:
+* ❌ Incorrect shortlists (placed students included)
+* 📉 No centralized data source
+* ⏳ Heavy manual effort using Excel sheets
+* 🚫 No real-time eligibility tracking
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🎯 Solution
 
-# Step 3: Install the necessary dependencies.
-npm i
+PlacementOS introduces:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+* ✅ Centralized placement database
+* ✅ Automated eligibility engine
+* ✅ One-click shortlist generation
+* ✅ Bulk operations & analytics
+
+---
+
+## 🏗️ System Architecture
+
+```
+Frontend (React)
+       ↓
+Backend API (Node.js / Express)
+       ↓
+PostgreSQL Database
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🧩 Features
 
-**Use GitHub Codespaces**
+### 🔹 Core Features
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+* Student Database (Reg No, Branch, CGPA, Status)
+* Placement Status Engine
+* Automated Eligibility Filtering
+* Recruiter Shortlist Generator
 
-## What technologies are used for this project?
+### 🔹 Admin (TPO) Features
 
-This project is built with:
+* Dashboard (Placed, Unplaced, Active Drives)
+* Bulk Status Update via Excel
+* Filtered Student Export
+* Audit Logs (immutable)
+* Manual Status Override
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### 🔹 Student Features
 
-## How can I deploy this project?
+* Apply to Drives
+* View Eligibility Status
+* Track Placement Status
+* Application History
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## 🧠 Advanced Features
 
-Yes, you can!
+### 📌 Lifecycle Management
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+* Add Individual Student
+* Not Interested Status (opt-out system)
+* Student Blacklisting
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### 📊 Analytics
+
+* Branch-wise Placement Rate (with denominator)
+* CTC Analytics (Median, Avg, Highest)
+* Company-wise Hiring Distribution
+
+---
+
+## 🔄 Workflow
+
+```mermaid
+graph TD
+A[TPO Creates Drive] --> B[Students Apply]
+B --> C[Eligibility Engine]
+C --> D[Filter Eligible Students]
+D --> E[Generate Shortlist]
+E --> F[Send to Recruiter]
+F --> G[Update Placement Status]
+```
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer    | Technology       |
+| -------- | ---------------- |
+| Frontend | React.js         |
+| Backend  | Node.js, Express |
+| Database | PostgreSQL       |
+| Auth     | JWT              |
+| Hosting  | Vercel / AWS     |
+
+---
+
+## 📂 Project Structure
+
+```
+placementOS/
+│── client/          # React frontend
+│── server/          # Node.js backend
+│── database/        # DB schema & migrations
+│── docs/            # PRD & documentation
+│── README.md
+```
+
+---
+
+## 📊 Key Metrics (Success Criteria)
+
+* 🎯 Incorrect shortlist rate → ~0%
+* ⏱️ Manual effort reduced significantly
+* ⚡ Bulk updates → minutes instead of hours
+* 📈 Real-time placement visibility
+
+---
+
+## 🔐 Non-Functional Requirements
+
+* Role-Based Access Control (Admin, Coordinator, Student)
+* High data accuracy & consistency
+* Secure authentication (JWT)
+* Scalable system design
+* Audit logging for all admin actions
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+* Node.js (v18+)
+* PostgreSQL
+* npm / yarn
+
+### Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/your-username/placementOS.git
+
+# Install dependencies
+cd placementOS
+npm install
+
+# Setup environment variables
+cp .env.example .env
+
+# Run backend
+npm run server
+
+# Run frontend
+npm run client
+```
+
+---
+
+## 🧪 Future Improvements
+
+* Recruiter login portal
+* AI-based candidate ranking
+* Resume parsing system
+* Interview scheduling automation
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to fork the repo and submit a PR.
+
+---
+
+## 📌 Why This Project Matters
+
+This project demonstrates:
+
+* Real-world product thinking
+* Scalable system design
+* Data-driven decision making
+* End-to-end full-stack execution
+
+💡 Ideal for showcasing in:
+
+* Product Management roles
+* Software Engineering roles
+* Data/Product Analyst roles
+
+---
+
+## 📄 License
+
+This project is for academic and internal use.
+
+---
+
+## 🙌 Acknowledgements
+
+* Training & Placement Cell — IIIT Ranchi
+* Product & Development Team
+
+---

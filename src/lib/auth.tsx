@@ -26,23 +26,25 @@ const AuthContext = createContext<AuthContextType | null>(null);
 
 async function fetchUserProfile(supabaseUser: SupabaseUser): Promise<User | null> {
   const { data: profile } = await supabase
-    .from('profiles')
+    .from('users')
     .select('*')
     .eq('id', supabaseUser.id)
     .single();
 
   if (!profile) return null;
 
-  const { data: roles } = await supabase
-    .from('user_roles')
-    .select('role')
-    .eq('user_id', supabaseUser.id);
+  // Map tpo_admin → admin to match your UserRole type
+  const roleMap: Record<string, UserRole> = {
+    'tpo_admin': 'admin',
+    'coordinator': 'coordinator',
+    'student': 'student',
+  };
 
-  const role = (roles?.[0]?.role as UserRole) ?? (profile.role as UserRole) ?? 'student';
+  const role = roleMap[profile.role] ?? 'student';
 
   return {
     id: supabaseUser.id,
-    name: profile.name,
+    name: profile.email,
     email: profile.email,
     role,
     reg_number: profile.reg_number ?? undefined,
